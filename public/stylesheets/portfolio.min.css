@@ -1,0 +1,7 @@
+article#portfolio{margin:0 -1px 0 -1px;line-height:0;background:transparent url("/images/picture-grid.png");}
+article#portfolio a{display:inline-block;background:#fff;margin:20px;padding:2px;border:1px solid #dedfdf;border-radius:2px;text-decoration:none;}
+article#portfolio a:hover{border-color:#bbb;box-shadow:0 0 12px #ddd}
+article#portfolio a img{display:block}
+article#portfolio a .info{color:#333;width:186px;opacity:0;background-color:#fff;padding:0 4px;height:40px;margin-top:-40px;text-align:center;line-height:20px;}
+article#portfolio a .info span{display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+

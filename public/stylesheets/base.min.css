@@ -1,0 +1,64 @@
+@import url("http://fonts.googleapis.com/css?family=Didact+Gothic&subset=latin-ext,latin");
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{background:transparent;border:0;font-size:100%;margin:0;outline:0;padding:0;vertical-align:baseline}
+body{line-height:1}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+nav ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}
+a{background:transparent;font-size:100%;margin:0;padding:0;vertical-align:baseline}
+ins{background-color:#ff9;color:#000;text-decoration:none}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{border:0;border-top:1px solid #ccc;display:block;height:1px;margin:1em 0;padding:0}
+input,select{vertical-align:middle}
+body{background:transparent url("/images/body.png");margin:0;font:.875em 'Didact Gothic',sans-serif;line-height:normal;color:#797979}
+article{margin:20px}
+h2{font-weight:normal;font-size:171.43%;margin:.5em 0 -.5em;}
+h2 a:link,h2 a:visited{color:#797979}
+h2 a:hover{color:#e41b5b;text-decoration:none}
+h3{font-weight:normal;font-size:142.86%;margin:.5em 0}
+p{margin:0 0 .75em;line-height:normal}
+strong,em{color:#666}
+a:link,a:visited{text-decoration:none;color:#e41b5b}
+a:hover{text-decoration:underline}
+.wrap-960{width:960px;margin:0 auto}
+.clear::after{content:'.';display:block;height:0;clear:both;visibility:hidden}
+.box{background-color:#fff;border:1px solid #dedfdf;border-radius:5px;box-shadow:0 0 6px #e6e6e6 inset;margin:26px 0 4px}
+div.separator{height:12px;margin:0 20px;background:#fff url("/images/separator.png");clear:both}
+header#header{background-color:#fff;border-bottom:1px solid #dedfdf;box-shadow:0 0 6px #e6e6e6 inset}
+a#logo{display:inline-block;float:left;width:460px;height:90px;margin:5px 0;background:#fff url("/images/logo.png")}
+nav#header-nav{float:right;margin-top:24px;}
+nav#header-nav ul{list-style:none;}
+nav#header-nav ul li{float:left;padding:0 15px;border-right:1px dotted #dedfdf;}
+nav#header-nav ul li:first-child{padding-left:0}
+nav#header-nav ul li a:link,nav#header-nav ul li a:visited{font-size:171.43%;color:#666}
+nav#header-nav ul li a:hover{text-decoration:none;color:#e41b5b;text-shadow:0 0 12px #ccc}
+nav#header-nav ul li span{display:block;}
+nav#header-nav ul li span.main{line-height:32px}
+nav#header-nav ul li span.sub{margin-left:1px;font-size:50%;color:#999}
+nav#header-nav ul li.lang{border-right-width:0;padding-right:0;text-align:center;}
+nav#header-nav ul li.lang span.main{display:inline-block;background:#fff url("/images/flags.png") no-repeat;width:32px;}
+nav#header-nav ul li.lang span.main.en{background-position:0 0}
+nav#header-nav ul li.lang span.main.ro{background-position:0 -32px}
+nav#header-nav ul li.lang span.sub{margin-left:0}
+article#web-links h3{margin-bottom:0}
+article#web-links a{float:right;width:124px;height:64px;margin:-10px 0 0 40px;padding-left:76px;text-decoration:none;color:#666;background:#fff url("/images/icons.png") no-repeat;}
+article#web-links a:hover{color:#e41b5b;text-shadow:0 0 12px #ccc}
+article#web-links a.picasa{background-position:0 0}
+article#web-links a.linkedin{background-position:0 -64px}
+article#web-links a.email{background-position:0 -128px}
+article#web-links a span{display:block;}
+article#web-links a span.info{margin-top:10px;color:#797979}
+article#web-links a span.title{font-size:142.86%}
+footer#footer{font-size:85.72%;margin-bottom:30px}
+span#footer-copyright{float:left;margin-left:3px}
+nav#footer-nav{float:right;margin-right:3px;}
+nav#footer-nav ul{list-style:none;margin-top:0;}
+nav#footer-nav ul li{float:left;padding-left:10px;border-left:1px solid #797979;margin-left:10px;}
+nav#footer-nav ul li:first-child{border-left:none}
+nav#footer-nav ul li a:link,nav#footer-nav ul li a:visited{color:#797979}
+nav#footer-nav ul li a:hover{color:#e41b5b}
+nav#footer-nav ul li a.top{background:transparent url("/images/top.png") no-repeat 100% 5px;padding-right:10px}
+
