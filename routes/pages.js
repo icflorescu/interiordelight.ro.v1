@@ -88,20 +88,25 @@ exports.index = function(req, res) {
 			gallery     = results[0];
 			lastProject = results[1][0];
 
-			// adjust content
-			adjuster.intro(lastProject, lang);
+			if (lastProject) {
+				// adjust content
+				adjuster.intro(lastProject, lang);
 
-			// render page
-			res.render('index', {
-				title: 'Intro',
-				css: 'index',
-				assetSuffix: assetSuffix,
-				i18n: i18n,
-				lang: lang,
+				// render page
+				res.render('index', {
+					title: 'Intro',
+					css: 'index',
+					assetSuffix: assetSuffix,
+					i18n: i18n,
+					lang: lang,
 
-				gallery: gallery,
-				lastProject: lastProject
-			});
+					gallery: gallery,
+					lastProject: lastProject
+				});
+			} else {
+				// no results - database is empty
+				next(new Error(404));
+			}
 		}
 	});
 };
