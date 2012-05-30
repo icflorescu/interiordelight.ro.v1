@@ -1,0 +1,41 @@
+body {
+  width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  font: 12px Verdana, Arial, sans-serif;
+  color: #999;
+  text-align: center;
+}
+#logo {
+  background: #fff url("/images/logo.png") 50% 50% no-repeat;
+  height: 130px;
+  border-bottom: 1px solid #999;
+}
+.message {
+  height: 32px;
+  line-height: 32px;
+  padding-left: 40px;
+  background: #fff url("/images/flags.png") no-repeat;
+}
+.message.en {
+  background-position: 0 -2px;
+  border-bottom: 1px dotted #999;
+}
+.message.ro {
+  background-position: 0 -34px;
+  border-bottom: 1px solid #999;
+}
+.links a {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  margin: 40px 20px 20px;
+  background: #fff url("/images/browsers.png") 0 0 no-repeat;
+}
+.links a.firefox {
+  background-position: 0 -64px;
+}
+.links a.opera {
+  background-position: 0 -128px;
+}
+

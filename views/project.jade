@@ -1,0 +1,15 @@
+h2
+  a(href='/portfolio', title=i18n['go to portfolio'][lang]) #{i18n['Portfolio'][lang]}
+  span.title= project.content[lang].title
+  span.date #{project.date.toJSON().substring(5, 7)}/#{project.date.getFullYear()}
+section.box.clear
+  each token in project.content[lang].descriptionTokens
+    if token.text
+      article.project-description!= token.text
+      .separator
+    article.project-pictures
+      each picture in token.pictures
+        a.fancybox(rel='group', href='#{picture.urlPrefix}/s1024/#{picture.fileName}', title=picture.title[lang])
+          img(src='#{picture.urlPrefix}/s194-c/#{picture.fileName}')
+    .separator
+  include includes/web-links

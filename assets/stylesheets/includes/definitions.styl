@@ -1,0 +1,41 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////// Color variables
+
+// Logo Colors
+color-1 = #AB1444
+color-2 = #EF769D
+color-3 = #E41B5B
+
+// Grays
+color-normal  = #797979
+color-darker  = #666
+color-lighter = #999
+
+/////////////////////////////////////////////////////////////////////////////////////////// Cross-browser support mixins
+
+column-count(n)
+  -webkit-column-count n
+  -moz-column-count n
+  column-count n
+
+column-gap(n)
+  -webkit-column-gap n
+  -moz-column-gap n
+  column-gap n
+
+box-flex(n)
+  -webkit-box-flex n
+  -moz-box-flex n
+  box-flex n
+
+box-orient(type)
+  -webkit-box-orient type
+  -moz-box-orient type
+  box-orient type
+
+display(type)
+  if type is "box"
+    display -webkit-box
+    display -moz-box
+    display box
+  else
+    display type

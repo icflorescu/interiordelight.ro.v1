@@ -1,0 +1,11 @@
+h2 #{i18n['Portfolio'][lang]}
+section.box.clear
+  article#portfolio
+    each project in projects
+      a(href='/portfolio/#{project.urlSuffix}')
+        img(src='#{project.coverPicture.urlPrefix}/s194/#{project.coverPicture.fileName}')
+        .info
+          span= project.content[lang].title
+          span - #{project.date.toJSON().substring(5, 7)}/#{project.date.getFullYear()} -
+  .separator
+  include includes/web-links

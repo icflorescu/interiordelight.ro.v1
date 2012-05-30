@@ -1,0 +1,27 @@
+section.box.clear
+  article#slider.theme-default
+    each image in gallery
+      img(src='#{image.urlPrefix}/s920/#{image.fileName}', title=image.title[lang])
+
+section.box.clear
+  article.about
+    if lang == 'en'
+      include includes/about-en
+    else
+      include includes/about-ro
+  article.services
+    if lang == 'en'
+      include includes/services-en
+    else
+      include includes/services-ro
+  .separator
+  article#latest-work
+    .images
+      each picture in lastProject.contentPictures
+        a.fancybox(rel='group', href='#{picture.urlPrefix}/s1024/#{picture.fileName}', title=picture.title[lang])
+          img(src='#{picture.urlPrefix}/s194-c/#{picture.fileName}')
+    h3= i18n['Latest work'][lang]
+    != lastProject.content[lang].intro
+    a.readmore(href='/portfolio/#{lastProject.urlSuffix}', title='#{i18n['go to project'][lang]} &quot;#{lastProject.content[lang].title}&quot;') #{i18n['read more'][lang]}
+  .separator
+  include includes/web-links

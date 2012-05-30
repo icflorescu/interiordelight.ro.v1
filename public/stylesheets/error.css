@@ -1,0 +1,7 @@
+article#error {
+  padding: 300px 20px 2px;
+  background: transparent url("/images/error-web.png") 50% 20px no-repeat;
+  text-align: center;
+  font-size: 133.33%;
+}
+

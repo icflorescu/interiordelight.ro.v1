@@ -1,0 +1,58 @@
+@import 'includes/definitions'
+
+article#slider
+  width 920px
+  height 420px
+  margin 20px auto 50px
+  box-shadow 0 0 12px #AAA
+
+article.about
+article.services
+  float left
+  margin-top 10px
+  margin-bottom 10px
+  width 439px
+
+article.about
+  p
+    margin-bottom 1.5em // to make "about" and "services" articles approx. the same height
+
+article#latest-work
+  min-height 204px
+
+  div.images
+    float right
+    margin 5px 0
+
+    a.fancybox
+      display inline-block
+      margin-left 40px
+      color #797979
+      text-decoration none
+      padding 2px
+      border 1px solid #DEDFDF
+      border-radius 2px
+      &:hover
+        border-color #BBB
+        box-shadow 0 0 12px #DDD
+      img
+        display block
+
+  a.readmore
+    font-size 85.72%
+    margin-top -5px
+    display inline-block
+    border-top 1px dotted #DEDFDF
+    width 186px
+    padding-left 12px
+    background #FFF url('/images/readmore.png') no-repeat 0 5px
+    &:link
+    &:visited
+      color color-normal
+    &:hover
+      border-top-color #BBB
+      color color-3
+      text-decoration none
+
+
+

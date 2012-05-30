@@ -1,0 +1,65 @@
+!!! 5
+html(lang=lang)
+  head
+    title #{title} :: interiordelight.ro
+    link(rel='shortcut icon', href='/favicon.ico', type='image/x-icon')
+    link(rel='stylesheet', href='/stylesheets/base#{assetSuffix}.css')
+    link(rel='stylesheet', href='/stylesheets/plugins#{assetSuffix}.css')
+    link(rel='stylesheet', href='/stylesheets/#{css}#{assetSuffix}.css')
+    //if IE
+      link(rel='stylesheet', href='/stylesheets/ie-sucks.css')
+    //if IE 8
+      link(rel='stylesheet', href='/stylesheets/ie-8-sucks.css')
+      script(src='/javascripts/html5shiv.js')
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
+    script(src='/javascripts/website#{assetSuffix}.js')
+  body
+    header#header
+      .wrap-960.clear
+        a#logo(href='/', title=i18n['go to homepage'][lang])
+        nav#header-nav
+          ul
+            li
+              a(href='/', title=i18n['go to homepage'][lang])
+                span.main Hello
+                span.sub= i18n['homepage'][lang]
+            li
+              a(href='/portfolio', title=i18n['see some of the stuff I did'][lang])
+                span.main= i18n['Portfolio'][lang]
+                span.sub= i18n['some of the stuff I did'][lang]
+            li
+              a(href='/contact', title=i18n['see where you can find me'][lang])
+                span.main Contact
+                span.sub= i18n['where you can find me'][lang]
+            if lang === 'en'
+              li.lang
+                a(href='?lang=ro', title='afișează în limba română')
+                  span.main.ro &nbsp;
+                  span.sub română
+            else
+              li.lang
+                a(href='?lang=en', title='switch to English')
+                  span.main.en &nbsp;
+                  span.sub English
+
+    .wrap-960.clear!= body
+
+    footer#footer
+      .wrap-960.clear
+        span#footer-copyright &copy; 2012 interiordelight.ro. #{i18n['All rights reserved'][lang]}.
+        nav#footer-nav
+          ul
+            li
+              a(href='/', title=i18n['go to homepage'][lang]) Hello
+            li
+              a(href='/portfolio', title=i18n['see some of the stuff I did'][lang])= i18n['Portfolio'][lang]
+            li
+              a(href='/contact', title=i18n['see where you can find me'][lang]) Contact
+            if lang === 'en'
+              li.lang.ro
+                a(href='?lang=ro', title='afișează în limba română') Limba Română
+            else
+              li.lang.en
+                a(href='?lang=en', title='switch to English') English Version
+            li
+              a.top(href='#', title=i18n['scroll to top'][lang])= i18n['Top'][lang]

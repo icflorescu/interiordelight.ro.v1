@@ -1,0 +1,35 @@
+@import 'includes/definitions'
+
+article#portfolio
+  margin 0 -1px 0 -1px
+  line-height 0
+  background transparent url('/images/picture-grid.png')
+
+  a
+    display inline-block
+    background #FFF
+    margin 20px
+    padding 2px
+    border 1px solid #DEDFDF
+    border-radius 2px
+    text-decoration none
+    &:hover
+      border-color #BBB
+      box-shadow 0 0 12px #DDD
+    img
+      display block
+    .info
+      color #333
+      width 186px
+      opacity 0
+      background-color #FFF
+      padding 0 4px
+      height 40px
+      margin-top -40px
+      text-align center
+      line-height 20px
+      & span
+        display block
+        overflow hidden
+        white-space nowrap
+        text-overflow ellipsis

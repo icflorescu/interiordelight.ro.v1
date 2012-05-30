@@ -1,0 +1,15 @@
+h2= title
+section.box.clear
+  article#error
+    if lang == 'en'
+      if status == 404
+        include includes/error-404-en
+      else
+        include includes/error-500-en
+    else
+      if status == 404
+        include includes/error-404-ro
+      else
+        include includes/error-500-ro
+  .separator
+  include includes/web-links

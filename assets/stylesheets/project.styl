@@ -1,0 +1,34 @@
+@import 'includes/definitions'
+
+h2
+  span.title
+    background transparent url('/images/project-title.png') no-repeat 10px
+    padding-left 30px
+  span.date
+    float right
+    background transparent url('/images/project-date.png') no-repeat 0
+    padding-left 10px
+
+article.project-description
+  margin 20px
+  &.cols
+    column-count 2
+    column-gap 40px
+
+article.project-pictures
+  margin 0 -1px 0 -1px
+  line-height 0
+  background transparent url('/images/picture-grid.png')
+
+  a.fancybox
+    display inline-block
+    background #FFF
+    margin 20px
+    padding 2px
+    border 1px solid #DEDFDF
+    border-radius 2px
+    &:hover
+      border-color #BBB
+      box-shadow 0 0 12px #DDD
+    img
+      display block

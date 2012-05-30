@@ -1,0 +1,19 @@
+{
+    "name": "interiordelight"
+  , "version": "0.0.1"
+  , "private": true
+  , "engines": {
+      "node": "0.6.18"
+    , "npm": "1.1.9"
+  }
+  , "dependencies": {
+      "express": "2.5.9"
+    , "jade": "*"
+    , "async": "*"
+    , "connect-mongo": "*"
+    , "passport": "*"
+    , "passport-google": "*"
+    , "mongojs": "*"
+    , "markdown": "*"
+  }
+}

@@ -1,0 +1,60 @@
+!!! 5
+html(lang='en')
+  head
+    title Admin :: interiordelight.ro
+    link(rel='shortcut icon', href='/favicon.ico', type='image/x-icon')
+    link(rel='stylesheet', href='/stylesheets/base#{assetSuffix}.css')
+    link(rel='stylesheet', href='/stylesheets/admin#{assetSuffix}.css')
+    script#content-pics-tmpl(type='template').
+      <span class="picture-border">
+        <span class="picture-content" style="background-image: url('<%= urlPrefix + '/s100-c/' + fileName %>');"><%= number %></span>
+      </span>
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
+    script(src='/javascripts/admin#{assetSuffix}.js')
+    script
+      App.Configuration = {
+        picasa: {
+          userId: '#{picasaConfig.userId}',
+          galleryAlbumId: '#{picasaConfig.galleryAlbumId}'
+        }
+      };
+  body
+    #left
+      #project-list
+        .title
+          span Projects
+          button.btn-add(title='Add new project') Add
+        .items.scroll
+      #gallery
+        .title
+          span Gallery
+          button.btn-refresh(title='Reload gallery pictures from Picasa') Refresh
+          .btn-separator
+          button.btn-next(title='Next picture') &raquo;
+          button.btn-prev(title='Previous picture') &laquo;
+        .content
+          .picture-border
+            .picture-content [no pictures]
+
+    #project-editor
+      .title
+        span Project Title
+        button.btn-pictures(title='Reload project pictures from Picasa') Reload Pictures
+        .btn-separator
+        button.btn-delete(title='Delete project') Delete
+        button.btn-save(title='Save project') Save
+      .items
+        .en
+          input#title-en(placeholder='Enter title (English...)')
+          textarea#description-en.scroll(placeholder='Enter description (English...)')
+        .ro
+          input#title-ro(placeholder='Enter title (Romanian...)')
+          textarea#description-ro.scroll(placeholder='Enter description (Romanian...)')
+        .pictures
+          .cover-picture
+            .picture-border
+              .picture-content [cover]
+          .content-pictures.scroll
+
+    #message-box
+      .inner Please wait...
