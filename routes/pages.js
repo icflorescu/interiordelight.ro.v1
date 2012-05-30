@@ -45,7 +45,7 @@ exports.adjustLanguage = function(req, res, next) {
 };
 
 // Home page
-exports.index = function(req, res) {
+exports.index = function(req, res, next) {
 	var lang = req.session.lang;
 
 	async.series([
@@ -112,7 +112,7 @@ exports.index = function(req, res) {
 };
 
 // Contact page
-exports.contact = function(req, res) {
+exports.contact = function(req, res, next) {
 	res.render('contact', {
 		title: 'Contact',
 		css: 'contact',
@@ -191,7 +191,7 @@ exports.project = function(req, res, next) {
 };
 
 // Admin page
-exports.admin = function(req, res) {
+exports.admin = function(req, res, next) {
  	if (req.isAuthenticated()) {
 		res.render('admin', {
 			layout: false,
