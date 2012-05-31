@@ -34,15 +34,15 @@ So in the end I came up with something that looks like this:
 ![Admin tool](https://lh5.googleusercontent.com/-6-DzIqXme1c/T8cto5ryNEI/AAAAAAAAGEg/fw6CBwqF5N0/s867/admin.png "Admin tool")
 
 ## REST
-The admin tool communicates with the server through a small API that is not strictly REST specs compliant (i.e. it's using session-based authentication).
+The admin tool communicates with the server through a small API that it's not strictly following REST specs (i.e. it's using session-based authentication).
 
 ## Web asset compression/minification
 This is performed with stylus and uglify-js during the "build stage"; there are 2 custom-configured "build systems" in my Sublime Text \(dev/prod\) that are calling build.sh  in the project root. Although there's a connect-based middleware to deal with Stylus-\>CSS conversion, I wanted to be able to have the assets in both readable and minified/compressed form and use them depending on NODE_ENV=development/production, and I found this to be the easiest way to do it.
 
 ## Picasa features
 Here are some undocumented features I discovered playing around with [Picasa Data API](https://developers.google.com/picasa-web/docs/2.0/developers_guide_protocol):
-- Each picture hosted on Picasa can be accessed through a direct URL of the form *http://lh6.ggpht.com/path\_prefix/**s1024**/file\_name.png*, where *s1024* is the width; the first time a picture is requested a version scaled exactly to the specified width is generated; subsequent requests to the same width are served from cache;
-- Issuing a request to *http://lh6.ggpht.com/path\_prefix/**s100-c**/file\_name.png* will return a rectangular, center-cropped version of the image \(that's how the thumbnails are generated on our website\).
+- Each picture hosted on Picasa can be accessed through a direct URL of the form `http://lh6.ggpht.com/path\_prefix/s1024/file\_name.png`, where *s1024* is the width in pixels; the first time a picture is requested, a version scaled exactly to the specified width is generated; subsequent requests to the same width are served from cache;
+- Issuing a request to `http://lh6.ggpht.com/path\_prefix/s100-c/file\_name.png` will return a rectangular, center-cropped 100px/100px version of the image \(that's how the thumbnails are generated on our website\).
 
 ## Picasa challenges
 The initial plan was to fetch & process the albums & picture info on the server-side, but it turned out there's no way of convincing their servers to give you the content up-to-date; you only get a cached snapshot \(which is, of course, understandable\). So practically this means your server won't know about changes/updates performed in the last few minutes, which is totally unpractical for an admin tool. The only circumstance when you do get live data is when you're the owner of the album\(s\) and the request is made from an authenticated browser session. Hence the solution to fetch the albums on the client-side…
