@@ -31,7 +31,7 @@ The admin tool needed to to stay out of the way as much as possible so we decide
 A very simple authentication mechanism was necessary for the admin section and since Picasa is used as image repository it made sense to use Google with OpenID 2.0.
 
 So in the end I came up with something that looks like this:
-![Admin tool](https://lh5.googleusercontent.com/-6-DzIqXme1c/T8cto5ryNEI/AAAAAAAAGEg/fw6CBwqF5N0/s867/admin.png "Admin tool")
+<img src="https://lh5.googleusercontent.com/-6-DzIqXme1c/T8cto5ryNEI/AAAAAAAAGEg/fw6CBwqF5N0/s867/admin.png" alt="interiordelight.ro :: admin tool" width="867" height="608" title="interiordelight.ro :: admin tool" />
 
 ## REST
 The admin tool communicates with the server through a small API that it's not strictly following REST specs (i.e. it's using session-based authentication).
