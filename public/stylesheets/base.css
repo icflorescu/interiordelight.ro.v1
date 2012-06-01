@@ -301,13 +301,13 @@ article#web-links a:hover {
   color: #e41b5b;
   text-shadow: 0 0 12px #ccc;
 }
-article#web-links a.picasa {
+article#web-links a.facebook {
   background-position: 0 0;
 }
 article#web-links a.linkedin {
   background-position: 0 -64px;
 }
-article#web-links a.email {
+article#web-links a.google {
   background-position: 0 -128px;
 }
 article#web-links a span {

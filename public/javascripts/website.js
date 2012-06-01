@@ -2427,7 +2427,8 @@
 }(window, document, jQuery));$(function() {
 	// Apply NivoSlider
 	$('#slider').nivoSlider({
-		effect: 'fade'
+		effect: 'fade',
+		pauseTime: 5000
 	});
 
 	// Apply FancyBox

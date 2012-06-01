@@ -39,7 +39,7 @@ h3.item span {
 }
 span.phone,
 span.skype,
-span.email {
+span.google {
   display: inline-block;
   width: 100px;
   height: 44px;
@@ -52,7 +52,7 @@ span.phone {
 span.skype {
   background-position: 0 -256px;
 }
-span.email {
+span.google {
   background-position: 0 -128px;
 }
 
