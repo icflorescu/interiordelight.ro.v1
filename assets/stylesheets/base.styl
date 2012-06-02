@@ -50,6 +50,11 @@ a:visited
 a:hover
   text-decoration underline
 
+/////////////////////////////////////// Remove annoying link outlines in Firefox
+a
+  outline none
+  -moz-outline-style none
+
 .wrap-960
   width 960px
   margin 0 auto
@@ -68,7 +73,7 @@ a:hover
   box-shadow 0 0 6px #E6E6E6 inset
   margin 26px 0 4px
 
-div.separator
+.separator
   height 12px
   margin 0 20px
   background #FFF url('/images/separator.png')
@@ -137,6 +142,79 @@ nav#header-nav
       span.sub
         margin-left 0
 
+//////////////////////////////////////////////////////////////////////////////////////////// Google +1 and Facebook Like
+
+#spread-the-word
+  position fixed
+  z-index 1000
+  top 0
+  right -70px
+  width 58px
+  //min-height 163px
+  background-color #FFF
+  border 1px solid #DEDFDF
+  border-right-width 0
+  border-radius 5px 0 0 5px
+  box-shadow 0 0 6px rgba(0, 0, 0, 0.08)
+  padding 0 5px 5px
+  .content
+    width 60px
+    text-align center
+  .fb-like
+    margin-left 4px
+  a.collapse
+  a.expand
+    font-size 85.72%
+    &:link
+    &:visited
+      color color-normal
+    &:hover
+      border-top-color #BBB
+      color color-3
+      text-decoration none
+
+  a.expand
+    transform rotate(90deg)
+    display none
+    margin-top 55px
+    margin-left -47px
+    margin-bottom 40px
+    width 100px
+    background transparent url('/images/arrows-down.png') no-repeat 0 7px
+    padding-left 12px
+
+  a.collapse
+    display block
+    margin 2px 0
+    padding-left 12px
+    background #FFF url('/images/arrows-right.png') no-repeat 0 5px
+
+  .separator
+    height 1px
+    margin 0 0 4px
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////// Clients
+
+article#clients
+  margin 5px 20px
+
+  .links
+    float right
+    margin-bottom 5px
+
+    a
+      display inline-block
+      background #FFF
+      margin-left 10px
+      padding 2px
+      border 1px solid #DEDFDF
+      border-radius 2px
+      &:hover
+        border-color #BBB
+        box-shadow 0 0 12px #DDD
+      img
+        display block
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////// Web Links
 
@@ -177,6 +255,14 @@ article#web-links
 footer#footer
   font-size 85.72%
   margin-bottom 30px
+  text-align center
+
+  a:link
+  a:visited
+    color color-normal
+  a:hover
+    color color-3
+
 
 span#footer-copyright
   float left
@@ -198,12 +284,6 @@ nav#footer-nav
       &:first-child
         border-left none
 
-      a:link
-      a:visited
-        color color-normal
-      a:hover
-        color color-3
-
       a.top
-        background transparent url('/images/top.png') no-repeat 100% 5px
+        background transparent url('/images/arrows-top.png') no-repeat 100% 5px
         padding-right 10px

@@ -14,13 +14,13 @@ article.services
   width 439px
 
 article.about
-  p
-    margin-bottom 1.5em // to make "about" and "services" articles approx. the same height
+  background url('/images/signature.png') no-repeat 95% 100%
+  padding-bottom 40px
 
 article#latest-work
   min-height 204px
 
-  div.images
+  .images
     float right
     margin 5px 0
 
@@ -38,14 +38,17 @@ article#latest-work
       img
         display block
 
+  .separator
+    width 200px
+    height 1px
+    margin 0
+    clear none
+
   a.readmore
     font-size 85.72%
-    margin-top -5px
     display inline-block
-    border-top 1px dotted #DEDFDF
-    width 186px
     padding-left 12px
-    background #FFF url('/images/readmore.png') no-repeat 0 5px
+    background #FFF url('/images/arrows-right.png') no-repeat 0 5px
     &:link
     &:visited
       color color-normal

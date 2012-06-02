@@ -6,6 +6,7 @@ h2 span.date {
   float: right;
   background: transparent url("/images/project-date.png") no-repeat 0;
   padding-left: 10px;
+  color: #999;
 }
 article.project-description {
   margin: 20px;

@@ -2424,14 +2424,82 @@
 		F.defaults.fixed = $.support.fixedPosition || !(($.browser.msie && $.browser.version <= 6) || isTouch);
 	});
 
-}(window, document, jQuery));$(function() {
+}(window, document, jQuery));/*!
+ * jQuery Cookie Plugin
+ * https://github.com/carhartl/jquery-cookie
+ *
+ * Copyright 2011, Klaus Hartl
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.opensource.org/licenses/GPL-2.0
+ */
+(function($) {
+    $.cookie = function(key, value, options) {
+
+        // key and at least value given, set cookie...
+        if (arguments.length > 1 && (!/Object/.test(Object.prototype.toString.call(value)) || value === null || value === undefined)) {
+            options = $.extend({}, options);
+
+            if (value === null || value === undefined) {
+                options.expires = -1;
+            }
+
+            if (typeof options.expires === 'number') {
+                var days = options.expires, t = options.expires = new Date();
+                t.setDate(t.getDate() + days);
+            }
+
+            value = String(value);
+
+            return (document.cookie = [
+                encodeURIComponent(key), '=', options.raw ? value : encodeURIComponent(value),
+                options.expires ? '; expires=' + options.expires.toUTCString() : '', // use expires attribute, max-age is not supported by IE
+                options.path    ? '; path=' + options.path : '',
+                options.domain  ? '; domain=' + options.domain : '',
+                options.secure  ? '; secure' : ''
+            ].join(''));
+        }
+
+        // key and possibly options given, get cookie...
+        options = value || {};
+        var decode = options.raw ? function(s) { return s; } : decodeURIComponent;
+
+        var pairs = document.cookie.split('; ');
+        for (var i = 0, pair; pair = pairs[i] && pairs[i].split('='); i++) {
+            if (decode(pair[0]) === key) return decode(pair[1] || ''); // IE saves cookies with empty string as "c; ", e.g. without "=" as opposed to EOMB, thus pair[1] may be undefined
+        }
+        return null;
+    };
+})(jQuery);
+//////////////////////////////////////////////////////////////////////////////////////////// Initialize Google +1 button
+
+(function() {
+	var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+	po.src = 'https://apis.google.com/js/plusone.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+
+////////////////////////////////////////////////////////////////////////////////////// Initilaize Facebook "Like" button
+
+(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+	fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+////////////////////////////////////////////////////////////////////////////////////////////////////// On document ready
+
+$(function() {
 	// Apply NivoSlider
 	$('#slider').nivoSlider({
 		effect: 'fade',
 		pauseTime: 5000
 	});
 
-	// Apply FancyBox
+	///////////////////////////////////////////////////////////// Apply FancyBox
+
 	$('.fancybox').fancybox({
 		openEffect: 'elastic',
 		closeEffect: 'elastic',
@@ -2439,7 +2507,8 @@
 		nextEffect: 'fade'
 	});
 
-	// Portfolio page - apply hover effect on project link images
+	///////////////// Portfolio page - apply hover effect on project link images
+
 	$('#portfolio a').on({
 		mouseenter: function() {
 			$('.info', this).stop().fadeTo(100, 0.75);
@@ -2449,7 +2518,8 @@
 		}
 	});
 
-	// Project page - add 2-cols class on large description tokens
+	//////////////// Project page - add 2-cols class on large description tokens
+
 	$('article.project-description').each(function(index, token) {
 		var $token = $(token);
 		console.log($token.height());
@@ -2458,11 +2528,64 @@
 		}
 	});
 
-	// Scroll to top footer link
+	/////////////////////////////////// Slow scroll to top effect on footer link
+
 	$('#footer-nav .top').click(function(e) {
 		$('body,html').animate({
 			scrollTop: 0
 		}, 'slow');
 		e.preventDefault();
 	});
-});
+
+	////////////////////// On windows loaded, position "spread the word" element
+
+	$(window).load(function() {
+		var right;
+
+		// act depending on 'spread-the-word-hidden' cookie (true/non-existent)
+		if ($.cookie('spread-the-word-hidden')) {
+			$('#spread-the-word .collapse').hide();
+			$('#spread-the-word .content').hide();
+			$('#spread-the-word .expand').css({ display: 'block' });
+			right = -45;
+		} else {
+			$('#spread-the-word .collapse').show();
+			$('#spread-the-word .content').show();
+			$('#spread-the-word .expand').css({ display: 'none' });
+			right = 0;
+		}
+
+		$('#spread-the-word').css({
+			top: $('section.box').first().offset().top + 1 + 'px'
+		}).animate({ right: right });
+	});
+
+	///////////////////////////////////////////////// Collapse "spread the word"
+
+	$('#spread-the-word .collapse').click(function(e) {
+		$('#spread-the-word').stop().animate({ right: -70 }, 'fast', function() {
+			$('#spread-the-word .collapse').hide();
+			$('#spread-the-word .content').hide();
+			$('#spread-the-word .expand').css({ display: 'block' });
+			$('#spread-the-word').animate({ right: -45 });
+		});
+		// remember state
+		$.cookie('spread-the-word-hidden', true, { path: '/' });
+		e.preventDefault();
+	});
+
+	/////////////////////////////////////////////////// Expand "spread the word"
+
+	$('#spread-the-word .expand').click(function(e) {
+		$('#spread-the-word').stop().animate({ right: -70 }, 'fast', function() {
+			$('#spread-the-word .collapse').show();
+			$('#spread-the-word .content').show();
+			$('#spread-the-word .expand').css({ display: 'none' });
+			$('#spread-the-word').animate({ right: 0 });
+		});
+		// remember state
+		$.cookie('spread-the-word-hidden', null, { path: '/' });
+		e.preventDefault();
+	});
+
+}); /////////////////////////////////////////////////////////////////////////////////////////// On document ready - done

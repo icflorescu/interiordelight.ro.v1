@@ -23,10 +23,11 @@ p{margin:0 0 .75em;line-height:normal}
 strong,em{color:#666}
 a:link,a:visited{text-decoration:none;color:#e41b5b}
 a:hover{text-decoration:underline}
+a{outline:none;-moz-outline-style:none}
 .wrap-960{width:960px;margin:0 auto}
 .clear::after{content:'.';display:block;height:0;clear:both;visibility:hidden}
 .box{background-color:#fff;border:1px solid #dedfdf;border-radius:5px;box-shadow:0 0 6px #e6e6e6 inset;margin:26px 0 4px}
-div.separator{height:12px;margin:0 20px;background:#fff url("/images/separator.png");clear:both}
+.separator{height:12px;margin:0 20px;background:#fff url("/images/separator.png");clear:both}
 header#header{background-color:#fff;border-bottom:1px solid #dedfdf;box-shadow:0 0 6px #e6e6e6 inset}
 a#logo{display:inline-block;float:left;width:460px;height:90px;margin:5px 0;background:#fff url("/images/logo.png")}
 nav#header-nav{float:right;margin-top:24px;}
@@ -43,6 +44,20 @@ nav#header-nav ul li.lang span.main{display:inline-block;background:#fff url("/i
 nav#header-nav ul li.lang span.main.en{background-position:0 0}
 nav#header-nav ul li.lang span.main.ro{background-position:0 -32px}
 nav#header-nav ul li.lang span.sub{margin-left:0}
+#spread-the-word{position:fixed;z-index:1000;top:0;right:-70px;width:58px;background-color:#fff;border:1px solid #dedfdf;border-right-width:0;border-radius:5px 0 0 5px;box-shadow:0 0 6px rgba(0,0,0,0.08);padding:0 5px 5px;}
+#spread-the-word .content{width:60px;text-align:center}
+#spread-the-word .fb-like{margin-left:4px}
+#spread-the-word a.collapse,#spread-the-word a.expand{font-size:85.72%;}
+#spread-the-word a.collapse:link,#spread-the-word a.expand:link,#spread-the-word a.collapse:visited,#spread-the-word a.expand:visited{color:#797979}
+#spread-the-word a.collapse:hover,#spread-the-word a.expand:hover{border-top-color:#bbb;color:#e41b5b;text-decoration:none}
+#spread-the-word a.expand{-webkit-transform:rotate(90deg);-moz-transform:rotate(90deg);-ms-transform:rotate(90deg);-o-transform:rotate(90deg);transform:rotate(90deg);display:none;margin-top:55px;margin-left:-47px;margin-bottom:40px;width:100px;background:transparent url("/images/arrows-down.png") no-repeat 0 7px;padding-left:12px}
+#spread-the-word a.collapse{display:block;margin:2px 0;padding-left:12px;background:#fff url("/images/arrows-right.png") no-repeat 0 5px}
+#spread-the-word .separator{height:1px;margin:0 0 4px}
+article#clients{margin:5px 20px;}
+article#clients .links{float:right;margin-bottom:5px;}
+article#clients .links a{display:inline-block;background:#fff;margin-left:10px;padding:2px;border:1px solid #dedfdf;border-radius:2px;}
+article#clients .links a:hover{border-color:#bbb;box-shadow:0 0 12px #ddd}
+article#clients .links a img{display:block}
 article#web-links h3{margin-bottom:0}
 article#web-links a{float:right;width:124px;height:64px;margin:-10px 0 0 40px;padding-left:76px;text-decoration:none;color:#666;background:#fff url("/images/icons.png") no-repeat;}
 article#web-links a:hover{color:#e41b5b;text-shadow:0 0 12px #ccc}
@@ -52,13 +67,13 @@ article#web-links a.google{background-position:0 -128px}
 article#web-links a span{display:block;}
 article#web-links a span.info{margin-top:10px;color:#797979}
 article#web-links a span.title{font-size:142.86%}
-footer#footer{font-size:85.72%;margin-bottom:30px}
+footer#footer{font-size:85.72%;margin-bottom:30px;text-align:center;}
+footer#footer a:link,footer#footer a:visited{color:#797979}
+footer#footer a:hover{color:#e41b5b}
 span#footer-copyright{float:left;margin-left:3px}
 nav#footer-nav{float:right;margin-right:3px;}
 nav#footer-nav ul{list-style:none;margin-top:0;}
 nav#footer-nav ul li{float:left;padding-left:10px;border-left:1px solid #797979;margin-left:10px;}
 nav#footer-nav ul li:first-child{border-left:none}
-nav#footer-nav ul li a:link,nav#footer-nav ul li a:visited{color:#797979}
-nav#footer-nav ul li a:hover{color:#e41b5b}
-nav#footer-nav ul li a.top{background:transparent url("/images/top.png") no-repeat 100% 5px;padding-right:10px}
+nav#footer-nav ul li a.top{background:transparent url("/images/arrows-top.png") no-repeat 100% 5px;padding-right:10px}
 

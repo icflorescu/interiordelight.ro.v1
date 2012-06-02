@@ -20,8 +20,11 @@ section.box.clear
       each picture in lastProject.contentPictures
         a.fancybox(rel='group', href='#{picture.urlPrefix}/s1024/#{picture.fileName}', title=picture.title[lang])
           img(src='#{picture.urlPrefix}/s194-c/#{picture.fileName}')
-    h3= i18n['Latest work'][lang]
+    h3 #{i18n['Latest work'][lang]}:
     != lastProject.content[lang].intro
+    .separator
     a.readmore(href='/portfolio/#{lastProject.urlSuffix}', title='#{i18n['go to project'][lang]} &quot;#{lastProject.content[lang].title}&quot;') #{i18n['read more'][lang]}
+  .separator
+  include includes/clients
   .separator
   include includes/web-links

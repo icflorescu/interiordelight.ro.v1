@@ -11,17 +11,18 @@ article.services {
   margin-bottom: 10px;
   width: 439px;
 }
-article.about p {
-  margin-bottom: 1.5em;
+article.about {
+  background: url("/images/signature.png") no-repeat 95% 100%;
+  padding-bottom: 40px;
 }
 article#latest-work {
   min-height: 204px;
 }
-article#latest-work div.images {
+article#latest-work .images {
   float: right;
   margin: 5px 0;
 }
-article#latest-work div.images a.fancybox {
+article#latest-work .images a.fancybox {
   display: inline-block;
   margin-left: 40px;
   color: #797979;
@@ -30,21 +31,24 @@ article#latest-work div.images a.fancybox {
   border: 1px solid #dedfdf;
   border-radius: 2px;
 }
-article#latest-work div.images a.fancybox:hover {
+article#latest-work .images a.fancybox:hover {
   border-color: #bbb;
   box-shadow: 0 0 12px #ddd;
 }
-article#latest-work div.images a.fancybox img {
+article#latest-work .images a.fancybox img {
   display: block;
+}
+article#latest-work .separator {
+  width: 200px;
+  height: 1px;
+  margin: 0;
+  clear: none;
 }
 article#latest-work a.readmore {
   font-size: 85.72%;
-  margin-top: -5px;
   display: inline-block;
-  border-top: 1px dotted #dedfdf;
-  width: 186px;
   padding-left: 12px;
-  background: #fff url("/images/readmore.png") no-repeat 0 5px;
+  background: #fff url("/images/arrows-right.png") no-repeat 0 5px;
 }
 article#latest-work a.readmore:link,
 article#latest-work a.readmore:visited {

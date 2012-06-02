@@ -14,6 +14,8 @@ html(lang=lang)
     script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
     script(src='/javascripts/website#{assetSuffix}.js')
   body
+    // For facebook's "Like" button
+    #fb-root
     header#header
       .wrap-960.clear
         a#logo(href='/', title=i18n['go to homepage'][lang])
@@ -42,11 +44,23 @@ html(lang=lang)
                   span.main.en &nbsp;
                   span.sub English
 
+    #spread-the-word
+      a.collapse(href='#')= i18n['hide me'][lang]
+      a.expand(href='#')= i18n['let people know'][lang]
+      .content
+        .separator
+        .g-plusone('data-size'='tall')
+        .separator
+        .fb-like('data-send'=true, 'data-layout'='box_count', 'data-width'='55', 'data-show-faces'='false', 'data-href'='')
+
     .wrap-960.clear!= body
 
     footer#footer
       .wrap-960.clear
         span#footer-copyright &copy; 2012 interiordelight.ro. #{i18n['All rights reserved'][lang]}.
+        | #{i18n['Built by'][lang]}&nbsp;
+        a(href='http://www.linkedin.com/in/icflorescu', target='_blank', title=i18n['See LinkedIn profile'][lang]) Ionut-Cristian Florescu
+        | .
         nav#footer-nav
           ul
             li
