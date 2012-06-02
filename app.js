@@ -49,7 +49,9 @@ app.configure(function() {
 	app.use(express.session({
 		secret: config.sessionSecretKey,
 		store: new MongoStore({
-			url: config.databaseUrl + '/' + config.sessionDatabaseCollection
+			url: config.databaseUrl + '/' + config.sessionDatabaseCollection,
+			auto_reconnect: true,
+			clear_interval: config.sessionClearInterval
 		})
 	}));
 	app.use(passport.initialize());

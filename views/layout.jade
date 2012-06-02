@@ -1,20 +1,40 @@
 !!! 5
-html(lang=lang)
+//- itemscope and itemtype are required by Google +1
+html(lang=lang, itemscope, itemtype=meta.schemaType)
   head
     title #{title} :: interiordelight.ro
     link(rel='shortcut icon', href='/favicon.ico', type='image/x-icon')
+
+    //- Canonical URL
+    if meta.canonicalUrl
+      link(rel='canonical', href=meta.canonicalUrl)
+      meta(property='og:url', content=meta.canonicalUrl)
+
+    meta(itemprop='name', content='#{title}')
+    meta(property='og:title', content='#{title}')
+    meta(property='og:type', content=meta.facebookType)
+    meta(property='og:site_name', content='interiordelight.ro')
+    meta(property='fb:admins', content=meta.facebookAdmins)
+
+    meta(name='description', content=meta.description)
+    meta(property='og:description', content=meta.description)
+    meta(itemprop='description', content=meta.description)
+
     link(rel='stylesheet', href='/stylesheets/base#{assetSuffix}.css')
     link(rel='stylesheet', href='/stylesheets/plugins#{assetSuffix}.css')
     link(rel='stylesheet', href='/stylesheets/#{css}#{assetSuffix}.css')
+
     //if IE
       link(rel='stylesheet', href='/stylesheets/ie-sucks.css')
+
     //if IE 8
       link(rel='stylesheet', href='/stylesheets/ie-8-sucks.css')
       script(src='/javascripts/html5shiv.js')
+
     script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
     script(src='/javascripts/website#{assetSuffix}.js')
   body
-    // For facebook's "Like" button
+    //- For facebook Like
     #fb-root
     header#header
       .wrap-960.clear
@@ -44,14 +64,16 @@ html(lang=lang)
                   span.main.en &nbsp;
                   span.sub English
 
-    #spread-the-word
-      a.collapse(href='#')= i18n['hide me'][lang]
-      a.expand(href='#')= i18n['let people know'][lang]
-      .content
-        .separator
-        .g-plusone('data-size'='tall')
-        .separator
-        .fb-like('data-send'=true, 'data-layout'='box_count', 'data-width'='55', 'data-show-faces'='false', 'data-href'='')
+    //- Only show Google +1 and facebook Like if canonical URL is defined
+    if meta.canonicalUrl
+      #spread-the-word
+        a.collapse(href='#')= i18n['hide me'][lang]
+        a.expand(href='#')= i18n['let people know'][lang]
+        .content
+          .separator
+          .g-plusone('data-size'='tall', 'data-href'=meta.canonicalUrl)
+          .separator
+          .fb-like('data-send'=true, 'data-layout'='box_count', 'data-width'='55', 'data-show-faces'='false')
 
     .wrap-960.clear!= body
 

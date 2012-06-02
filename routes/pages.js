@@ -3,9 +3,9 @@ var async = require('async'),
 	db = require('../lib/db').instance(),
 	assetSuffix = process.env.NODE_ENV === 'production' ? '.min' : '';
 	i18n = require('../lib/i18n'),
-	adjuster = require('../lib/content-adjuster');
+	processor = require('../lib/content-processor');
 
-// Filter IE < 8 browsers
+///////////////////////////////////////////////////////////////////////////////////////////////// Filter IE < 8 browsers
 exports.filterBrowser = function(req, res, next) {
 	var userAgent, ieIndex, ieVersion;
 
@@ -32,7 +32,7 @@ exports.filterBrowser = function(req, res, next) {
 	}
 };
 
-// Adjust session language if necessary
+/////////////////////////////////////////////////////////////////////////////////// Adjust session language if necessary
 exports.adjustLanguage = function(req, res, next) {
 	if (req.param('lang')) {
 		req.session.lang = req.param('lang');
@@ -44,7 +44,7 @@ exports.adjustLanguage = function(req, res, next) {
 	next();
 };
 
-// Home page
+////////////////////////////////////////////////////////////////////////////////////////////////////////////// Home page
 exports.index = function(req, res, next) {
 	var lang = req.session.lang;
 
@@ -90,7 +90,7 @@ exports.index = function(req, res, next) {
 
 			if (lastProject) {
 				// adjust content
-				adjuster.intro(lastProject, lang);
+				processor.intro(lastProject, lang);
 
 				// render page
 				res.render('index', {
@@ -101,7 +101,15 @@ exports.index = function(req, res, next) {
 					lang: lang,
 
 					gallery: gallery,
-					lastProject: lastProject
+					lastProject: lastProject,
+
+					meta: {
+						schemaType: 'Organization',
+						facebookType: 'website',
+						canonicalUrl: 'http://' + req.headers.host + req.route.path + '?lang=' + lang,
+						description: i18n.descriptionMetaTag[lang],
+						facebookAdmins: config.facebookAdmins
+					}
 				});
 			} else {
 				// no results - database is empty
@@ -111,18 +119,28 @@ exports.index = function(req, res, next) {
 	});
 };
 
-// Contact page
+/////////////////////////////////////////////////////////////////////////////////////////////////////////// Contact page
 exports.contact = function(req, res, next) {
+	var lang = req.session.lang;
+
 	res.render('contact', {
 		title: 'Contact',
 		css: 'contact',
 		assetSuffix: assetSuffix,
 		i18n: i18n,
-		lang: req.session.lang
+		lang: lang,
+
+		meta: {
+			schemaType: 'Person',
+			facebookType: 'author',
+			canonicalUrl: 'http://' + req.headers.host + req.route.path + '?lang=' + lang,
+			description: i18n.descriptionMetaTag[lang],
+			facebookAdmins: config.facebookAdmins
+		}
 	});
 };
 
-// Portfolio page
+///////////////////////////////////////////////////////////////////////////////////////////////////////// Portfolio page
 exports.portfolio = function(req, res, next) {
 	var lang = req.session.lang,
 		fields = {
@@ -146,13 +164,21 @@ exports.portfolio = function(req, res, next) {
 				i18n: i18n,
 				lang: lang,
 
-				projects: results
+				projects: results,
+
+				meta: {
+					schemaType: 'Organization',
+					facebookType: 'website',
+					canonicalUrl: 'http://' + req.headers.host + req.route.path + '?lang=' + lang,
+					description: i18n.descriptionMetaTag[lang],
+					facebookAdmins: config.facebookAdmins
+				}
 			});
 		}
 	});
 };
 
-// Project page
+/////////////////////////////////////////////////////////////////////////////////////////////////////////// Project page
 exports.project = function(req, res, next) {
 	var lang = req.session.lang,
 		fields = {
@@ -173,7 +199,7 @@ exports.project = function(req, res, next) {
 			next(new Error(404));
 		} else {
 			// adjust content
-			adjuster.project(result, lang);
+			processor.project(result, lang);
 
 			// render page
 			res.render('project', {
@@ -184,13 +210,21 @@ exports.project = function(req, res, next) {
 				i18n: i18n,
 				lang: lang,
 
-				project: result
+				project: result,
+
+				meta: {
+					schemaType: 'Article',
+					facebookType: 'article',
+					canonicalUrl: 'http://' + req.headers.host + req.route.path.replace(':project', req.params.project) + '?lang=' + lang,
+					description: i18n.descriptionMetaTag[lang],
+					facebookAdmins: config.facebookAdmins
+				}
 			});
 		}
 	});
 };
 
-// Admin page
+///////////////////////////////////////////////////////////////////////////////////////////////////////////// Admin page
 exports.admin = function(req, res, next) {
  	if (req.isAuthenticated()) {
 		res.render('admin', {
@@ -203,7 +237,7 @@ exports.admin = function(req, res, next) {
  	}
 };
 
-// Error page
+///////////////////////////////////////////////////////////////////////////////////////////////////////////// Error page
 exports.error = function(err, req, res, next) {
 	var lang = req.session.lang,
 		status = (err.message == '404' ? 404 : 500);
@@ -212,11 +246,18 @@ exports.error = function(err, req, res, next) {
 
 	res.status(status);
 	res.render('error', {
-		title: i18n['Oops! It seems we have a problem...'][lang],
+		title: i18n.errorPageTitle[lang],
 		css: 'error',
 		assetSuffix: assetSuffix,
 		i18n: i18n,
 		lang: lang,
-		status: status
+		status: status,
+
+		meta: {
+			schemaType: 'Organization',
+			facebookType: 'website',
+			description: i18n.descriptionMetaTag[lang],
+			facebookAdmins: config.facebookAdmins
+		}
 	});
 };
