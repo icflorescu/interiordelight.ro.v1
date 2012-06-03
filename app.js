@@ -57,7 +57,7 @@ app.configure(function() {
 	app.use(passport.initialize());
 	app.use(passport.session());
 	app.use(express.static(__dirname + '/public', { maxAge: config.maxCacheAge }));
-	app.use(express.favicon(__dirname + '/public/images/favicon.ico', { maxAge: config.maxCacheAge }));
+	app.use(express.favicon(__dirname + '/public/favicon.ico', { maxAge: config.maxCacheAge }));
 	app.use(app.router);
 	app.use(routes.pages.error);
 });
