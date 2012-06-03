@@ -28,7 +28,13 @@ if [ $1 == "production" ]; then
   stylus -c -I $CSS_SRC < $CSS_SRC/plugins.styl > $CSS_DST/plugins.min.css
 fi
 
-cat $JS_SRC/lib/nivoslider.js $JS_SRC/lib/fancybox.js $JS_SRC/lib/jquery.cookie.js $JS_SRC/website.js > $JS_DST/website.js
+cat $JS_SRC/lib/nivoslider.js \
+    $JS_SRC/lib/fancybox.js \
+    $JS_SRC/lib/jquery.cookie.js \
+    $JS_SRC/website.js \
+    $JS_SRC/google.analytics.js \
+  > $JS_DST/website.js
+
 if [ $1 == "production" ]; then
   cat $JS_DST/website.js | uglifyjs -nc -o $JS_DST/website.min.js
 fi
@@ -93,14 +99,14 @@ if [ $1 == "production" ]; then
 fi
 
 cat $JS_SRC/lib/underscore.js \
-	$JS_SRC/lib/backbone.js \
-	$JS_SRC/lib/deep-model.js \
-	$JS_SRC/admin/init.js \
-	$JS_SRC/admin/model/* \
-	$JS_SRC/admin/collection/* \
-	$JS_SRC/admin/view/* \
-	$JS_SRC/admin/start.js \
-	> $JS_DST/admin.js
+    $JS_SRC/lib/backbone.js \
+    $JS_SRC/lib/deep-model.js \
+    $JS_SRC/admin/init.js \
+    $JS_SRC/admin/model/* \
+    $JS_SRC/admin/collection/* \
+    $JS_SRC/admin/view/* \
+    $JS_SRC/admin/start.js \
+  > $JS_DST/admin.js
 
 if [ $1 == "production" ]; then
   cat $JS_DST/admin.js | uglifyjs -nc -o $JS_DST/admin.min.js
