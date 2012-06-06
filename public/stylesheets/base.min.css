@@ -50,7 +50,7 @@ nav#header-nav ul li.lang span.sub{margin-left:0}
 #spread-the-word a.collapse,#spread-the-word a.expand{font-size:85.72%;}
 #spread-the-word a.collapse:link,#spread-the-word a.expand:link,#spread-the-word a.collapse:visited,#spread-the-word a.expand:visited{color:#797979}
 #spread-the-word a.collapse:hover,#spread-the-word a.expand:hover{border-top-color:#bbb;color:#e41b5b;text-decoration:none}
-#spread-the-word a.expand{-webkit-transform:rotate(90deg);-moz-transform:rotate(90deg);-ms-transform:rotate(90deg);-o-transform:rotate(90deg);transform:rotate(90deg);display:none;margin-top:55px;margin-left:-47px;margin-bottom:40px;width:100px;background:transparent url("/images/arrows-down.png") no-repeat 0 7px;padding-left:12px}
+#spread-the-word a.expand{-webkit-transform:rotate(90deg);-moz-transform:rotate(90deg);-ms-transform:rotate(90deg);-o-transform:rotate(90deg);transform:rotate(90deg);display:none;margin:55px 0 40px -47px;width:100px;background:transparent url("/images/arrows-down.png") no-repeat 0 7px;padding-left:12px}
 #spread-the-word a.collapse{display:block;margin:2px 0;padding-left:12px;background:#fff url("/images/arrows-right.png") no-repeat 0 5px}
 #spread-the-word .separator{height:1px;margin:0 0 4px}
 article#clients{margin:5px 20px;}

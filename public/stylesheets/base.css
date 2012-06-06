@@ -335,9 +335,7 @@ nav#header-nav ul li.lang span.sub {
 /* Opera */
   transform: rotate(90deg);
   display: none;
-  margin-top: 55px;
-  margin-left: -47px;
-  margin-bottom: 40px;
+  margin: 55px 0 40px -47px;
   width: 100px;
   background: transparent url("/images/arrows-down.png") no-repeat 0 7px;
   padding-left: 12px;
