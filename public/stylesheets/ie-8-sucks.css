@@ -4,4 +4,7 @@ header#header div {
 article#portfolio .info {
   filter: alpha(opacity=0);
 }
+#spread-the-word a.expand {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
 

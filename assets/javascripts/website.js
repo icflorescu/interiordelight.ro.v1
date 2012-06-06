@@ -49,7 +49,6 @@ $(function() {
 
 	$('article.project-description').each(function(index, token) {
 		var $token = $(token);
-		console.log($token.height());
 		if($token.height() > 100) {
 			$token.addClass('cols');
 		}
