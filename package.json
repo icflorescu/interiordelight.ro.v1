@@ -1,13 +1,13 @@
 {
     "name": "interiordelight"
-  , "version": "0.0.1"
+  , "version": "0.0.2"
   , "private": true
   , "engines": {
-      "node": "0.6.18"
-    , "npm": "1.1.9"
+      "node": "0.8.1"
+    , "npm": "1.1.35"
   }
   , "dependencies": {
-      "express": "2.5.9"
+      "express": "2.5.11"
     , "jade": "*"
     , "async": "*"
     , "connect-mongo": "*"
