@@ -3,8 +3,8 @@
   , "version": "1.0.0"
   , "private": true
   , "engines": {
-      "node": "0.8.2"
-    , "npm": "1.1.36"
+      "node": "0.8.6"
+    , "npm": "1.1.41"
   }
   , "dependencies": {
       "express": "2.5.11"
