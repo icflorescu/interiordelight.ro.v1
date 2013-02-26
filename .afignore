@@ -1,6 +1,7 @@
 .gitignore
-.afignore
+.slugignore
 .DS_Store
+Procfile
 assets
 build.sh
 readme.md

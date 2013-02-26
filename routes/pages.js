@@ -1,6 +1,6 @@
 var async = require('async'),
 	config = require('../lib/config'),
-	db = require('../lib/db').instance(),
+	db = require('../lib/database').connection(),
 	assetSuffix = process.env.NODE_ENV === 'production' ? '.min' : '';
 	i18n = require('../lib/i18n'),
 	processor = require('../lib/content-processor');

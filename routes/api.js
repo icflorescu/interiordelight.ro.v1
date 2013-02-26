@@ -1,5 +1,5 @@
 var async = require('async'),
-	db = require('../lib/db').instance();
+	db = require('../lib/database').connection();
 
 exports.projects = {
 	browse: function(req, res) {

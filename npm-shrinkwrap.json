@@ -1,0 +1,134 @@
+{
+  "name": "interiordelight",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": {
+      "version": "2.5.11",
+      "from": "express@2.5.11",
+      "dependencies": {
+        "connect": {
+          "version": "1.9.2",
+          "from": "connect@1.x",
+          "dependencies": {
+            "formidable": {
+              "version": "1.0.11",
+              "from": "formidable@1.0.x"
+            }
+          }
+        },
+        "mime": {
+          "version": "1.2.4",
+          "from": "mime@1.2.4"
+        },
+        "qs": {
+          "version": "0.4.2",
+          "from": "qs@0.4.x"
+        },
+        "mkdirp": {
+          "version": "0.3.0",
+          "from": "mkdirp@0.3.0"
+        }
+      }
+    },
+    "jade": {
+      "version": "0.28.1",
+      "from": "jade@*",
+      "dependencies": {
+        "commander": {
+          "version": "0.6.1",
+          "from": "commander@0.6.1"
+        },
+        "mkdirp": {
+          "version": "0.3.4",
+          "from": "mkdirp@0.3.x"
+        },
+        "coffee-script": {
+          "version": "1.4.0",
+          "from": "coffee-script@~1.4.0"
+        }
+      }
+    },
+    "async": {
+      "version": "0.2.5",
+      "from": "async@*"
+    },
+    "connect-mongo": {
+      "version": "0.3.2",
+      "from": "connect-mongo@*",
+      "dependencies": {
+        "mongodb": {
+          "version": "1.2.12",
+          "from": "mongodb@1.2.x",
+          "dependencies": {
+            "bson": {
+              "version": "0.1.7",
+              "from": "bson@0.1.7"
+            }
+          }
+        }
+      }
+    },
+    "passport": {
+      "version": "0.1.15",
+      "from": "passport@*",
+      "dependencies": {
+        "pkginfo": {
+          "version": "0.2.3",
+          "from": "pkginfo@0.2.x"
+        }
+      }
+    },
+    "passport-google": {
+      "version": "0.3.0",
+      "from": "passport-google@*",
+      "dependencies": {
+        "pkginfo": {
+          "version": "0.2.3",
+          "from": "pkginfo@0.2.x"
+        },
+        "passport-openid": {
+          "version": "0.3.1",
+          "from": "passport-openid@0.3.x",
+          "dependencies": {
+            "openid": {
+              "version": "0.5.0",
+              "from": "openid@0.5.x"
+            }
+          }
+        }
+      }
+    },
+    "mongojs": {
+      "version": "0.6.2",
+      "from": "mongojs@*",
+      "dependencies": {
+        "mongodb": {
+          "version": "1.2.12",
+          "from": "mongodb@1.x.x",
+          "dependencies": {
+            "bson": {
+              "version": "0.1.7",
+              "from": "bson@0.1.7"
+            }
+          }
+        }
+      }
+    },
+    "markdown": {
+      "version": "0.4.0",
+      "from": "markdown@*",
+      "dependencies": {
+        "nopt": {
+          "version": "1.0.10",
+          "from": "nopt@1",
+          "dependencies": {
+            "abbrev": {
+              "version": "1.0.4",
+              "from": "abbrev@1"
+            }
+          }
+        }
+      }
+    }
+  }
+}
