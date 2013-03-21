@@ -11,8 +11,9 @@
           "from": "connect@1.x",
           "dependencies": {
             "formidable": {
-              "version": "1.0.11",
-              "from": "formidable@1.0.x"
+              "version": "1.0.13",
+              "from": "formidable@1.0.x",
+              "resolved": "https://registry.npmjs.org/formidable/-/formidable-1.0.13.tgz"
             }
           }
         },
@@ -31,7 +32,7 @@
       }
     },
     "jade": {
-      "version": "0.28.1",
+      "version": "0.28.2",
       "from": "jade@*",
       "dependencies": {
         "commander": {
@@ -39,38 +40,36 @@
           "from": "commander@0.6.1"
         },
         "mkdirp": {
-          "version": "0.3.4",
+          "version": "0.3.5",
           "from": "mkdirp@0.3.x"
-        },
-        "coffee-script": {
-          "version": "1.4.0",
-          "from": "coffee-script@~1.4.0"
         }
       }
     },
     "async": {
-      "version": "0.2.5",
-      "from": "async@*"
+      "version": "0.2.6",
+      "from": "async@*",
+      "resolved": "https://registry.npmjs.org/async/-/async-0.2.6.tgz"
     },
     "connect-mongo": {
       "version": "0.3.2",
       "from": "connect-mongo@*",
       "dependencies": {
         "mongodb": {
-          "version": "1.2.12",
-          "from": "mongodb@1.2.x",
+          "version": "1.2.14",
+          "from": "mongodb@~1.2.13",
           "dependencies": {
             "bson": {
-              "version": "0.1.7",
-              "from": "bson@0.1.7"
+              "version": "0.1.8",
+              "from": "bson@0.1.8"
             }
           }
         }
       }
     },
     "passport": {
-      "version": "0.1.15",
+      "version": "0.1.16",
       "from": "passport@*",
+      "resolved": "https://registry.npmjs.org/passport/-/passport-0.1.16.tgz",
       "dependencies": {
         "pkginfo": {
           "version": "0.2.3",
@@ -78,39 +77,53 @@
         }
       }
     },
-    "passport-google": {
-      "version": "0.3.0",
-      "from": "passport-google@*",
+    "passport-google-oauth": {
+      "version": "0.1.5",
+      "from": "passport-google-oauth@*",
+      "resolved": "https://registry.npmjs.org/passport-google-oauth/-/passport-google-oauth-0.1.5.tgz",
       "dependencies": {
         "pkginfo": {
           "version": "0.2.3",
           "from": "pkginfo@0.2.x"
         },
-        "passport-openid": {
-          "version": "0.3.1",
-          "from": "passport-openid@0.3.x",
+        "passport-oauth": {
+          "version": "0.1.14",
+          "from": "passport-oauth@~0.1.4",
+          "resolved": "https://registry.npmjs.org/passport-oauth/-/passport-oauth-0.1.14.tgz",
           "dependencies": {
-            "openid": {
-              "version": "0.5.0",
-              "from": "openid@0.5.x"
+            "oauth": {
+              "version": "0.9.10",
+              "from": "oauth@0.9.x",
+              "resolved": "https://registry.npmjs.org/oauth/-/oauth-0.9.10.tgz"
             }
           }
         }
       }
     },
     "mongojs": {
-      "version": "0.6.2",
+      "version": "0.7.2",
       "from": "mongojs@*",
+      "resolved": "https://registry.npmjs.org/mongojs/-/mongojs-0.7.2.tgz",
       "dependencies": {
         "mongodb": {
-          "version": "1.2.12",
-          "from": "mongodb@1.x.x",
+          "version": "1.2.14",
+          "from": "mongodb@~1.2.13",
           "dependencies": {
             "bson": {
-              "version": "0.1.7",
-              "from": "bson@0.1.7"
+              "version": "0.1.8",
+              "from": "bson@0.1.8"
             }
           }
+        },
+        "thunky": {
+          "version": "0.1.0",
+          "from": "thunky@~0.1.0",
+          "resolved": "https://registry.npmjs.org/thunky/-/thunky-0.1.0.tgz"
+        },
+        "readable-stream": {
+          "version": "1.0.2",
+          "from": "readable-stream@~1.0.2",
+          "resolved": "https://registry.npmjs.org/readable-stream/-/readable-stream-1.0.2.tgz"
         }
       }
     },

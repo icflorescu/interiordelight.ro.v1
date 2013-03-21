@@ -12,7 +12,7 @@
     , "async": "*"
     , "connect-mongo": "*"
     , "passport": "*"
-    , "passport-google": "*"
+    , "passport-google-oauth": "*"
     , "mongojs": "*"
     , "markdown": "*"
   }

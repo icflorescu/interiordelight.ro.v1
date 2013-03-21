@@ -2,9 +2,10 @@
  * Modules & Variables
  */
 var express = require('express'),
+	db = require('./lib/database').connection(),
 	MongoStore = require('connect-mongo')(express),
 	passport = require('passport'),
-	GoogleStrategy = require('passport-google').Strategy,
+	GoogleStrategy = require('passport-google-oauth').OAuth2Strategy,
 	config = require('./lib/config'),
 	routes = require('./routes'),
 	app = module.exports = express.createServer();
@@ -21,10 +22,12 @@ passport.deserializeUser(function(obj, callback) {
 });
 
 passport.use(new GoogleStrategy({
-		realm: config.passport.realm,
-		returnURL: config.passport.returnURL
+		clientID:      config.passport.clientId,
+		clientSecret:  config.passport.clientSecret,
+		callbackURL:   config.passport.callbackURL,
+		scope:         'https://www.googleapis.com/auth/userinfo.email'
  	},
- 	function(identifier, profile, callback) {
+ 	function(accessToken, refreshToken, profile, callback) {
  		var isAuthorized = profile.emails.some(function(item) {
 	 			return config.passport.admins.indexOf(item.value) > -1;
  			});
@@ -46,31 +49,20 @@ app.configure(function() {
 	app.use(express.bodyParser());
 	app.use(express.methodOverride());
 	app.use(express.cookieParser());
+	app.use(express.static(__dirname + '/public', { maxAge: config.maxCacheAge }));
+	app.use(express.favicon(__dirname + '/public/favicon.ico', { maxAge: config.maxCacheAge }));
 	app.use(express.session({
 		secret: config.sessionSecretKey,
 		store: new MongoStore({
-			url: config.databaseUrl + '/' + config.sessionDatabaseCollection,
-			auto_reconnect: true,
-			clear_interval: config.sessionClearInterval
+			url: config.databaseUrl + '/sessions',
+			stringify: false
 		})
 	}));
 	app.use(passport.initialize());
 	app.use(passport.session());
-	app.use(express.static(__dirname + '/public', { maxAge: config.maxCacheAge }));
-	app.use(express.favicon(__dirname + '/public/favicon.ico', { maxAge: config.maxCacheAge }));
 	app.use(app.router);
 	app.use(routes.pages.error);
 });
-
-/*
-app.configure('development', function() {
-	app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
-});
-
-app.configure('production', function() {
-	app.use(express.errorHandler());
-});
-*/
 
 /**
  * Routes

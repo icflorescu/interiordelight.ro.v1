@@ -1,147 +1,188 @@
-/////////////////////////////////////////////////////////////////////////// Base
-
 .nivoSlider
-  position relative
+  position: relative
+  width: 100%
+  height: auto
+  overflow: hidden
 
-  img
-    position absolute
-    top 0px
-    left 0px
+.nivoSlider img
+  position: absolute
+  top: 0px
+  left: 0px
+  max-width: none
 
-  /* If an image is wrapped in a link */
-  a.nivo-imageLink
-    position absolute
-    top 0px
-    left 0px
-    width 100%
-    height 100%
-    border 0
-    padding 0
-    margin 0
-    z-index 6
-    display none
+.nivo-main-image
+  display: block !important
+  position: relative !important
+  width: 100% !important
 
-/* The slices and boxes in the Slider */
+.nivoSlider a.nivo-imageLink
+  position: absolute
+  top: 0px
+  left: 0px
+  width: 100%
+  height: 100%
+  border: 0
+  padding: 0
+  margin: 0
+  z-index: 6
+  display: none
+  background: white
+  filter: {'alpha(opacity=0)'}
+  opacity: 0
+
 .nivo-slice
-  display block
-  position absolute
-  z-index 5
-  height 100%
+  display: block
+  position: absolute
+  z-index: 5
+  height: 100%
+  top: 0
 
 .nivo-box
-  display block
-  position absolute
-  z-index 5
+  display: block
+  position: absolute
+  z-index: 5
+  overflow: hidden
 
-/* Caption styles */
+.nivo-box img
+  display: block
+
 .nivo-caption
-  position absolute
-  left 0px
-  bottom 0px
-  background #000
-  color #fff
-  opacity 0.8 /* Overridden by captionOpacity setting */
-  width 100%
-  z-index 8
+  position: absolute
+  left: 0px
+  bottom: 0px
+  background: #000
+  color: #fff
+  width: 100%
+  z-index: 8
+  padding: 5px 10px
+  opacity: 0.8
+  overflow: hidden
+  display: none
+  -moz-opacity: 0.8
+  filter: {'alpha(opacity=8)'}
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
 
-  p
-    padding 5px
-    margin 0
+.nivo-caption p
+  padding: 5px
+  margin: 0
 
-  a
-    display inline !important
+.nivo-caption a
+  display: inline !important
 
 .nivo-html-caption
-  display none
+  display: none
 
-/* Direction nav styles (e.g. Next & Prev) */
-.nivo-directionNav
-  a
-    position absolute
-    top 45%
-    z-index 9
-    cursor pointer
+.nivo-directionNav a
+  position: absolute
+  top: 45%
+  z-index: 9
+  cursor: pointer
 
 .nivo-prevNav
-  left 0px
+  left: 0px
 
 .nivo-nextNav
-  right 0px
+  right: 0px
 
-/* Control nav styles (e.g. 1,2,3...) */
 .nivo-controlNav
-  a
-    position relative
-    z-index 9
-    cursor pointer
+  text-align: center
+  padding: 15px 0
 
-  a.active
-    font-weight bold
+.nivo-controlNav a
+  cursor: pointer
 
+.nivo-controlNav a.active
+  font-weight: bold
 
-/////////////////////////////////////////////////////////////// Themes - Default
+//////////////////////////////////////////////////////////////////////////////////////////////////////// Theme - Default
 
-.theme-default
-.theme-small
-  .nivoSlider
-    position relative
-    background #fff url('/images/preloader.gif') no-repeat 50% 50%
-    // margin-bottom 50px
-    -webkit-box-shadow 0px 1px 5px 0px #4a4a4a
-    -moz-box-shadow 0px 1px 5px 0px #4a4a4a
-    box-shadow 0px 1px 5px 0px #4a4a4a
+.theme-default .nivoSlider
+  position: relative
+  background: #fff url('/images/loading.gif') no-repeat 50% 50%
+  margin-bottom: 10px
+  -webkit-box-shadow: 0px 1px 5px 0px #4a4a4a
+  -moz-box-shadow: 0px 1px 5px 0px #4a4a4a
+  box-shadow: 0px 1px 5px 0px #4a4a4a
+  overflow: visible
 
-    img
-      position absolute
-      top 0px
-      left 0px
-      display none
+.theme-default .nivoSlider img
+  position: absolute
+  top: 0px
+  left: 0px
+  display: none
 
-    a
-      border 0
-      display block
+.theme-default .nivoSlider a
+  border: 0
+  display: block
 
-  .nivo-controlNav
-    position absolute
-    right -5px
-    bottom -38px
+.theme-default .nivo-controlNav
+  float: right
+  margin-right: -6px
+  padding: 0
 
-    a
-      display block
-      width 24px
-      height 24px
-      background url('/images/nivoslider-bullets.png') no-repeat
-      text-indent -9999px
-      border 0
-      margin-right 3px
-      float left
-    a.active
-      background-position 0 -24px
+.theme-default .nivo-controlNav a
+  display: inline-block
+  width: 24px
+  height: 24px
+  background: url('/images/nivoslider-bullets.png') no-repeat
+  text-indent: -9999px
+  border: 0
+  margin: 0 2px
 
-  .nivo-directionNav a
-    display block
-    width 30px
-    height 30px
-    background url('/images/nivoslider-arrows.png') no-repeat
-    text-indent -9999px
-    border 0
+.theme-default .nivo-controlNav a.active
+  background-position: 0 -24px
 
-  a.nivo-nextNav
-    background-position -30px 0
-    right 15px
+.theme-default .nivo-directionNav a
+  display: block
+  width: 30px
+  height: 30px
+  background: url('/images/nivoslider-arrows.png') no-repeat
+  text-indent: -9999px
+  border: 0
+  opacity: 0
+  -webkit-transition: all 200ms ease-in-out
+  -moz-transition: all 200ms ease-in-out
+  -o-transition: all 200ms ease-in-out
+  transition: all 200ms ease-in-out
 
-  a.nivo-prevNav
-    left 15px
+.theme-default:hover .nivo-directionNav a
+  opacity: 1
 
-  .nivo-caption
-    left -5px
-    bottom -40px
-    background transparent
-    color #999
-    font-size 142.86%
+.theme-default a.nivo-nextNav
+  background-position: -30px 0
+  right: 15px
 
-    a
-      color #fff
-      border-bottom 1px dotted #fff
-    a:hover
-      color #fff
+.theme-default a.nivo-prevNav
+  left: 15px
+
+.theme-default .nivo-caption
+  bottom: -32px
+  padding: 0
+  width: 50%
+  background: transparent
+  color: #666
+  font-family: 'Didact Gothic', sans-serif
+  font-size: 142.86%
+
+.theme-default .nivo-caption a
+  color: #fff
+  border-bottom: 1px dotted #fff
+
+.theme-default .nivo-caption a:hover
+  color: #fff
+
+.theme-default .nivo-controlNav.nivo-thumbs-enabled
+  width: 100%
+
+.theme-default .nivo-controlNav.nivo-thumbs-enabled a
+  width: auto
+  height: auto
+  background: none
+  margin-bottom: 5px
+
+.theme-default .nivo-controlNav.nivo-thumbs-enabled img
+  display: block
+  width: 120px
+  height: auto

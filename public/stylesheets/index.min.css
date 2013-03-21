@@ -1,4 +1,5 @@
-article#slider{width:920px;height:420px;margin:20px auto 50px;box-shadow:0 0 12px #aaa}
+article.slider{width:920px;height:420px;margin:20px auto 44px;}
+article.slider #slider{box-shadow:0 0 12px #ddd}
 article.about,article.services{float:left;margin-top:10px;margin-bottom:10px;width:439px}
 article.about{background:url("/images/signature.png") no-repeat 95% 100%;padding-bottom:40px}
 article#latest-work{min-height:204px;}

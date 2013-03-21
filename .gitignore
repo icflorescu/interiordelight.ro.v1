@@ -1,2 +1,5 @@
-node_modules
 .DS_Store
+node_modules
+npm-shrinkwrap.json
+start_dev.sh
+deploy.sh

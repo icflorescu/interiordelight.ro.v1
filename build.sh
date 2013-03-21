@@ -36,7 +36,7 @@ cat $JS_SRC/lib/nivoslider.js \
   > $JS_DST/website.js
 
 if [ $1 == "production" ]; then
-  cat $JS_DST/website.js | uglifyjs -nc -o $JS_DST/website.min.js
+  uglifyjs $JS_DST/website.js -o $JS_DST/website.min.js
 fi
 
 ############################################################################################################ page: index
@@ -109,7 +109,7 @@ cat $JS_SRC/lib/underscore.js \
   > $JS_DST/admin.js
 
 if [ $1 == "production" ]; then
-  cat $JS_DST/admin.js | uglifyjs -nc -o $JS_DST/admin.min.js
+  uglifyjs $JS_DST/admin.js -o $JS_DST/admin.min.js
 fi
 
 ############################################################################################################## IE Tweaks

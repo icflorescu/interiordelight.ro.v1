@@ -94,7 +94,7 @@ exports.index = function(req, res, next) {
 
 				// render page
 				res.render('index', {
-					title: 'Intro',
+					title: 'interiordelight.ro',
 					css: 'index',
 					assetSuffix: assetSuffix,
 					i18n: i18n,
@@ -124,7 +124,7 @@ exports.contact = function(req, res, next) {
 	var lang = req.session.lang;
 
 	res.render('contact', {
-		title: 'Contact',
+		title: 'Irinel Florescu :: interiordelight.ro',
 		css: 'contact',
 		assetSuffix: assetSuffix,
 		i18n: i18n,
@@ -158,7 +158,7 @@ exports.portfolio = function(req, res, next) {
 		} else {
 			// render page
 			res.render('portfolio', {
-				title: i18n['Portfolio'][lang],
+				title: i18n['Portfolio'][lang] + ' :: interiordelight.ro',
 				css: 'portfolio',
 				assetSuffix: assetSuffix,
 				i18n: i18n,
@@ -204,7 +204,8 @@ exports.project = function(req, res, next) {
 			// render page
 			res.render('project', {
 				title: result.content[lang].title + ' : ' +
-				       result.date.toJSON().substring(5,7) + '/' + result.date.getFullYear(),
+				       result.date.toJSON().substring(5,7) + '/' + result.date.getFullYear() +
+				       ' :: interiordelight.ro',
 				css: 'project',
 				assetSuffix: assetSuffix,
 				i18n: i18n,

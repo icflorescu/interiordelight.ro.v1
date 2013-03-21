@@ -5,7 +5,7 @@ App.View.ProjectList = Backbone.View.extend({
 		var me = this;
 
 		me.options.eventBus.on('projectchanged', me.onProjectChanged, me);
-		me.collection.on('reset', me.render, me);
+		me.collection.on('sync', me.render, me);
 		me.collection.fetch();
 	},
 

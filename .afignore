@@ -3,5 +3,7 @@
 .DS_Store
 Procfile
 assets
-build.sh
 readme.md
+build.sh
+start_dev.sh
+deploy.sh

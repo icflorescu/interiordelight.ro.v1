@@ -1,7 +1,7 @@
 var async = require('async'),
 	db = require('../lib/database').connection();
 
-exports.projects = {
+projects = {
 	browse: function(req, res) {
 		db.projects.find({}, { 'content.en.title': 1 }).sort({ date: -1 }, function(err, projects) {
 			if (err) {
@@ -56,7 +56,7 @@ exports.projects = {
 	}
 };
 
-exports.gallery = {
+gallery = {
 	read: function(req, res) {
 		var gallery;
 
@@ -100,3 +100,6 @@ exports.checkAuthentication = function(req, res, next) {
  		res.send(401);
  	}
 };
+
+exports.projects = projects;
+exports.gallery  = gallery;

@@ -2,7 +2,7 @@
 //- itemscope and itemtype are required by Google +1
 html(lang=lang, itemscope, itemtype=meta.schemaType)
   head
-    title #{title} :: interiordelight.ro
+    title #{title}
     link(rel='shortcut icon', href='/favicon.ico', type='image/x-icon')
 
     //- Canonical URL
@@ -31,7 +31,7 @@ html(lang=lang, itemscope, itemtype=meta.schemaType)
       link(rel='stylesheet', href='/stylesheets/ie-8-sucks.css')
       script(src='/javascripts/html5shiv.js')
 
-    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
     script(src='/javascripts/website#{assetSuffix}.js')
   body
 
@@ -81,7 +81,7 @@ html(lang=lang, itemscope, itemtype=meta.schemaType)
 
     footer#footer
       .wrap-960.clear
-        span#footer-copyright &copy; 2012 interiordelight.ro. #{i18n['All rights reserved'][lang]}.
+        span#footer-copyright &copy; 2012-2013 interiordelight.ro. #{i18n['All rights reserved'][lang]}.
         | #{i18n['Built on Node.js by'][lang]}&nbsp;
         a(href='http://www.linkedin.com/in/icflorescu', target='_blank', title=i18n['See LinkedIn profile'][lang]) Ionut-Cristian Florescu
         | .
