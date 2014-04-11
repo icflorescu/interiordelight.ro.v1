@@ -10,6 +10,8 @@
 - [jQuery](http://jquery.com/) and DocumentCloud's [Backbone](http://documentcloud.github.com/backbone/) framework for client-side programming;
 - the excellent [NivoSlider](http://nivo.dev7studios.com/) and [FancyBox](http://fancyapps.com/fancybox/) jQuery plugins.
 
+**Notice:** this repository refers to the initial version of [interiordelight.ro](http://www.interiordelight.ro). The current version source code is not (yet?) publicly available. See [this brief article](https://coderwall.com/p/wrta7a) on Coderwall about the new version. 
+
 ## Tools and environments used:
 - [Sublime Text 2](http://www.sublimetext.com/2) editor on Mac OS X for writing code, [UglifyJS](https://github.com/mishoo/UglifyJS) to compress client-side js and [Stylus executable](http://learnboost.github.com/stylus/docs/executable.html) to generate css at build stage;
 - [Heroku](http://www.heroku.com/) platform for application hosting, with [MongoLab](https://addons.heroku.com/mongolab) add-on for data storage and [Zerigo](https://addons.heroku.com/zerigo_dns) for painless DNS management.
